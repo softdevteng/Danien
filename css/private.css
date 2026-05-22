@@ -1,0 +1,331 @@
+/* Private Section */
+.private-section {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffe0e6 100%);
+    position: relative;
+}
+
+.private-section::before {
+    content: '🔒💕🔒';
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 2rem;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.private-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.private-content.hidden {
+    display: none;
+}
+
+/* Private Login */
+.private-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    padding: 1rem;
+}
+
+.login-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+    animation: slideUp 0.5s ease-out;
+    margin: 0 auto;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-box h3 {
+    color: #ff1744;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.login-box p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.passcode-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ffe0e6;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.passcode-input:focus {
+    outline: none;
+    border-color: #ff1744;
+    box-shadow: 0 0 10px rgba(255, 23, 68, 0.2);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(135deg, #ff1744 0%, #ff4081 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 23, 68, 0.4);
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+.login-message {
+    margin-top: 1rem;
+    font-weight: 600;
+    min-height: 20px;
+    font-size: 0.9rem;
+}
+
+/* Private Moments Display */
+.private-moments {
+    display: none;
+    animation: fadeInScale 0.5s ease-out;
+}
+
+.private-moments h3 {
+    text-align: center;
+    color: #ff1744;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(255, 23, 68, 0.2);
+}
+
+.private-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.private-photo {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.private-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 23, 68, 0.3);
+}
+
+.private-photo img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.private-photo p {
+    padding: 0.8rem;
+    background: linear-gradient(135deg, #ff1744 0%, #ff4081 100%);
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    margin: 0;
+}
+
+.private-messages {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.private-messages h4 {
+    color: #ff1744;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.messages-box {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffe0e6 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #ff1744;
+    margin-bottom: 1rem;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.messages-box p {
+    color: #333;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.8;
+    margin: 0;
+    transition: opacity 0.3s ease;
+    font-weight: 500;
+}
+
+.message-btn {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, #ff1744 0%, #ff4081 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    align-self: center;
+}
+
+.message-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 23, 68, 0.4);
+}
+
+.message-btn:active {
+    transform: scale(0.98);
+}
+
+.logout-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, #ff1744 0%, #ff4081 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logout-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 23, 68, 0.4);
+}
+
+.logout-btn:active {
+    transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .login-box {
+        padding: 1.5rem;
+        max-width: 280px;
+    }
+
+    .login-box h3 {
+        font-size: 1.4rem;
+    }
+
+    .private-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .private-photo {
+        max-width: 100%;
+    }
+
+    .private-moments h3 {
+        font-size: 1.5rem;
+    }
+
+    .messages-box {
+        padding: 1rem;
+    }
+
+    .message-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .private-login {
+        min-height: 300px;
+        padding: 0.5rem;
+    }
+
+    .login-box {
+        padding: 1.2rem;
+        max-width: 90vw;
+    }
+
+    .login-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .login-box p {
+        font-size: 0.95rem;
+    }
+
+    .passcode-input {
+        padding: 0.7rem;
+        font-size: 1rem;
+    }
+
+    .login-btn {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+
+    .messages-box {
+        padding: 0.8rem;
+        min-height: 80px;
+    }
+
+    .messages-box p {
+        font-size: 0.95rem;
+    }
+
+    .message-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .private-photo p {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,228 @@
+/* Music Player Section */
+.music-section {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffe0e6 100%);
+    position: relative;
+}
+
+.music-section::after {
+    content: '🎵💕🎵';
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+    font-size: 2rem;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.music-player {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    border: 2px solid rgba(255, 23, 68, 0.1);
+}
+
+.player-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.play-btn, .pause-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff1744 0%, #ff4081 100%);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, all 0.3s ease;
+    font-weight: 600;
+    opacity: 0.8;
+    position: relative;
+}
+
+.play-btn:hover, .pause-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 23, 68, 0.4);
+}
+
+.play-btn:active, .pause-btn:active {
+    transform: scale(0.98);
+}
+
+.play-btn {
+    opacity: 1;
+}
+
+.pause-btn {
+    opacity: 0.5;
+}
+
+.audio-player {
+    display: none;
+}
+
+.music-info {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.music-info p {
+    margin: 0.5rem 0;
+    color: #666;
+    font-weight: 500;
+}
+
+.music-time {
+    font-size: 0.9rem;
+    color: #ff1744;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #ff1744 0%, #ff4081 100%);
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.volume-control label {
+    font-weight: 600;
+    color: #666;
+}
+
+.volume-slider {
+    width: 150px;
+    height: 6px;
+    border-radius: 5px;
+    background: #e0e0e0;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff1744 0%, #ff4081 100%);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 10px rgba(255, 23, 68, 0.4);
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff1744 0%, #ff4081 100%);
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+}
+
+.volume-slider::-moz-range-thumb:hover {
+    box-shadow: 0 0 10px rgba(255, 23, 68, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .music-player {
+        padding: 1.5rem;
+    }
+
+    .player-controls {
+        flex-wrap: wrap;
+    }
+
+    .play-btn, .pause-btn {
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .volume-control {
+        flex-direction: column;
+    }
+
+    .volume-slider {
+        width: 100%;
+    }
+
+    .music-info p {
+        font-size: 0.95rem;
+    }
+
+    .music-time {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .music-player {
+        padding: 1.2rem;
+        max-width: 100%;
+    }
+
+    .player-controls {
+        gap: 0.8rem;
+    }
+
+    .play-btn, .pause-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+        min-width: 100px;
+    }
+
+    .music-info p {
+        font-size: 0.9rem;
+    }
+
+    .music-time {
+        font-size: 0.8rem;
+    }
+
+    .progress-bar {
+        height: 6px;
+        margin-bottom: 1rem;
+    }
+
+    .volume-control {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .volume-control label {
+        font-size: 0.9rem;
+    }
+
+    .volume-slider {
+        width: 100%;
+    }
+}
