@@ -1,0 +1,174 @@
+/* Heart Animation Section */
+.heart-container {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.heart-shape {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    animation: heartBeatLarge 1.5s ease-in-out infinite;
+}
+
+.heart-shape:hover {
+    animation: heartOpen 0.8s ease-out forwards;
+}
+
+@keyframes heartBeatLarge {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Heart Left Half */
+.heart-left, .heart-right {
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    background: linear-gradient(135deg, #ff1744 0%, #ff4081 100%);
+    border-radius: 100px 100px 0 0;
+    top: 30px;
+}
+
+.heart-left {
+    left: 0;
+    transform-origin: 50% 100%;
+    transition: transform 0.8s ease-out;
+}
+
+.heart-right {
+    right: 0;
+    transform-origin: 50% 100%;
+    transition: transform 0.8s ease-out;
+}
+
+/* Heart Bottom Point */
+.heart-bottom {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 100px solid #ff1744;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease-out;
+}
+
+/* Paragraph Content */
+.love-paragraph-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.8s ease-out;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.love-paragraph-content p {
+    margin: 0;
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Hover State - Heart Opens */
+.heart-shape:hover .heart-left {
+    transform: rotateZ(-50deg) translateX(-20px);
+}
+
+.heart-shape:hover .heart-right {
+    transform: rotateZ(50deg) translateX(20px);
+}
+
+.heart-shape:hover .heart-bottom {
+    opacity: 0;
+}
+
+.heart-shape:hover .love-paragraph-content {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .heart-shape {
+        width: 160px;
+        height: 160px;
+    }
+
+    .heart-left, .heart-right {
+        width: 80px;
+        height: 120px;
+        top: 25px;
+    }
+
+    .heart-bottom {
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        border-top: 80px solid #ff1744;
+        transform: translateX(-80px);
+    }
+
+    .love-paragraph-content {
+        max-width: 350px;
+        padding: 1.2rem;
+    }
+
+    .love-paragraph-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heart-shape {
+        width: 140px;
+        height: 140px;
+    }
+
+    .heart-left, .heart-right {
+        width: 70px;
+        height: 105px;
+        top: 20px;
+    }
+
+    .heart-bottom {
+        border-left: 70px solid transparent;
+        border-right: 70px solid transparent;
+        border-top: 70px solid #ff1744;
+        transform: translateX(-70px);
+    }
+
+    .love-paragraph-content {
+        max-width: 280px;
+        padding: 1rem;
+    }
+
+    .love-paragraph-content p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .heart-container {
+        margin: 1rem 0;
+    }
+}
