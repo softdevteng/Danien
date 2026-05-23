@@ -114,6 +114,17 @@ body {
     animation: fadeInScale 1.2s ease-out;
 }
 
+/* When heart is opened, hide other hero text so love message is readable */
+.hero-content.heart-opened .romantic-message,
+.hero-content.heart-opened .love-paragraph,
+.hero-content.heart-opened .hearts-animation,
+.hero-content.heart-opened .subtitle {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
 .hero h1 {
     font-size: 4.5rem;
     margin-bottom: 1rem;

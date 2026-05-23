@@ -148,6 +148,21 @@
     opacity: 1;
 }
 
+/* Also respond to programmatic/opened state (for click/tap on mobile) */
+.heart-shape.opened .heart-left {
+    transform: rotateZ(-50deg) translateX(-20px);
+}
+.heart-shape.opened .heart-right {
+    transform: rotateZ(50deg) translateX(20px);
+}
+.heart-shape.opened .heart-bottom {
+    opacity: 0;
+}
+.heart-shape.opened .love-paragraph-content {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .heart-container {

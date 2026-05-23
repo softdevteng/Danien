@@ -65,3 +65,33 @@ const observer = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.gallery-item, .timeline-content, .music-player').forEach(el => {
     observer.observe(el);
 });
+
+// Heart interaction: hide other hero text when heart opens (hover or tap)
+document.addEventListener('DOMContentLoaded', function() {
+    const heart = document.querySelector('.heart-shape');
+    const heroContent = document.querySelector('.hero-content');
+    if (!heart || !heroContent) return;
+
+    // Hover (desktop)
+    heart.addEventListener('mouseenter', () => {
+        heart.classList.add('opened');
+        heroContent.classList.add('heart-opened');
+    });
+    heart.addEventListener('mouseleave', () => {
+        heart.classList.remove('opened');
+        heroContent.classList.remove('heart-opened');
+    });
+
+    // Click / touch (mobile) toggles open state
+    heart.addEventListener('click', (e) => {
+        e.preventDefault();
+        heart.classList.toggle('opened');
+        heroContent.classList.toggle('heart-opened');
+    });
+
+    // Touch support: toggle on touchstart as well
+    heart.addEventListener('touchstart', (e) => {
+        heart.classList.toggle('opened');
+        heroContent.classList.toggle('heart-opened');
+    }, {passive: true});
+});
