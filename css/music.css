@@ -154,50 +154,121 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .music-section::after {
+        font-size: 1.5rem;
+        bottom: 30px;
+        left: 15px;
+    }
+
     .music-player {
         padding: 1.5rem;
+        max-width: 100%;
+        margin: 0 1rem;
+        border-radius: 12px;
     }
 
     .player-controls {
+        gap: 0.8rem;
         flex-wrap: wrap;
     }
 
     .play-btn, .pause-btn {
         flex: 1;
-        min-width: 120px;
+        min-width: 100px;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
     }
 
-    .volume-control {
-        flex-direction: column;
-    }
-
-    .volume-slider {
-        width: 100%;
+    .music-info {
+        margin-bottom: 1.2rem;
     }
 
     .music-info p {
         font-size: 0.95rem;
+        margin: 0.4rem 0;
     }
 
     .music-time {
         font-size: 0.85rem;
     }
-}
 
-@media (max-width: 480px) {
-    .music-player {
-        padding: 1.2rem;
-        max-width: 100%;
+    .progress-bar {
+        height: 6px;
+        margin-bottom: 1.2rem;
     }
 
-    .player-controls {
+    .volume-control {
+        flex-direction: column;
         gap: 0.8rem;
     }
 
+    .volume-control label {
+        font-size: 0.95rem;
+    }
+
+    .volume-slider {
+        width: 100%;
+        height: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .music-section::after {
+        display: none;
+    }
+
+    .music-player {
+        padding: 1rem;
+        max-width: 100%;
+        margin: 0 0.5rem;
+        border-radius: 10px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .player-controls {
+        gap: 0.6rem;
+        margin-bottom: 1rem;
+    }
+
     .play-btn, .pause-btn {
-        padding: 0.7rem 1.2rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+        min-width: 80px;
+        border-radius: 6px;
+    }
+
+    .music-info {
+        margin-bottom: 1rem;
+    }
+
+    .music-info p {
         font-size: 0.9rem;
-        min-width: 100px;
+        margin: 0.3rem 0;
+    }
+
+    .music-time {
+        font-size: 0.8rem;
+    }
+
+    .progress-bar {
+        height: 5px;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+    }
+
+    .volume-control {
+        gap: 0.6rem;
+    }
+
+    .volume-control label {
+        font-size: 0.9rem;
+    }
+
+    .volume-slider {
+        width: 100%;
+        height: 4px;
+    }
+}
     }
 
     .music-info p {

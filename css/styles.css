@@ -346,9 +346,59 @@ section h2::after {
     }
 }
 
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 70vh;
+        padding: 2rem 1rem;
+    }
+
+    .hero-content {
+        padding: 2rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .romantic-message {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    section {
+        padding: 3rem 1.5rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+}
+
 @media (max-width: 480px) {
+    .navbar {
+        padding: 0.8rem 0;
+    }
+
+    .nav-container {
+        padding: 0 0.8rem;
+        gap: 1rem;
+    }
+
     .logo {
         font-size: 1.2rem;
+        gap: 0.5rem;
     }
 
     .logo-img {
@@ -357,54 +407,67 @@ section h2::after {
     }
 
     .nav-menu {
-        gap: 0.5rem;
+        gap: 0.8rem;
+        font-size: 0.85rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        padding: 0.4rem 0.6rem;
         font-size: 0.9rem;
     }
 
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 1rem;
+        background-attachment: scroll;
+    }
+
+    .hero-content {
+        padding: 1rem 0;
+    }
+
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        margin-bottom: 0.6rem;
     }
 
     .subtitle {
         font-size: 1rem;
-    }
-
-    .romantic-message {
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .love-paragraph {
-        font-size: 0.85rem;
-        padding: 0.8rem;
         margin-bottom: 1rem;
     }
 
-    .heart {
-        font-size: 1.5rem;
+    .romantic-message {
+        font-size: 0.95rem;
+        padding: 0.7rem 1rem;
+        margin-bottom: 1rem;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 10px;
     }
 
-    section h2 {
-        font-size: 1.4rem;
+    .heart {
+        font-size: 2rem;
+    }
+
+    .hearts-animation {
+        gap: 1rem;
+        margin-top: 1.5rem;
     }
 
     section {
-        padding: 2rem
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .subtitle {
-        font-size: 1.2rem;
+        padding: 2rem 1rem;
     }
 
     section h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
-    .nav-container {
-        padding: 0 1rem;
+    section h2::after {
+        width: 100px;
+        height: 2px;
     }
 }

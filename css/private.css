@@ -250,59 +250,32 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .private-section::before {
+        font-size: 1.5rem;
+        top: 15px;
+        left: 15px;
+    }
+
     .login-box {
         padding: 1.5rem;
-        max-width: 280px;
-    }
-
-    .login-box h3 {
-        font-size: 1.4rem;
-    }
-
-    .private-gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .private-photo {
         max-width: 100%;
-    }
-
-    .private-moments h3 {
-        font-size: 1.5rem;
-    }
-
-    .messages-box {
-        padding: 1rem;
-    }
-
-    .message-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .private-login {
-        min-height: 300px;
-        padding: 0.5rem;
-    }
-
-    .login-box {
-        padding: 1.2rem;
-        max-width: 90vw;
+        margin: 0 1rem;
     }
 
     .login-box h3 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .login-box p {
         font-size: 0.95rem;
+        margin-bottom: 1.2rem;
     }
 
     .passcode-input {
         padding: 0.7rem;
         font-size: 1rem;
+        margin-bottom: 0.8rem;
     }
 
     .login-btn {
@@ -310,22 +283,155 @@
         font-size: 0.95rem;
     }
 
-    .messages-box {
-        padding: 0.8rem;
-        min-height: 80px;
+    .private-moments h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
     }
 
-    .messages-box p {
-        font-size: 0.95rem;
+    .private-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
 
-    .message-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.85rem;
+    .private-photo img {
+        height: 200px;
     }
 
     .private-photo p {
         padding: 0.6rem;
         font-size: 0.9rem;
+    }
+
+    .private-messages {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .private-messages h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .messages-box {
+        padding: 1.2rem;
+        min-height: 90px;
+    }
+
+    .messages-box p {
+        font-size: 1rem;
+    }
+
+    .message-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .logout-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .private-section::before {
+        display: none;
+    }
+
+    .private-login {
+        min-height: auto;
+        padding: 1rem 0.5rem;
+    }
+
+    .login-box {
+        padding: 1.2rem;
+        max-width: 100%;
+        margin: 0 0.5rem;
+        border-radius: 12px;
+    }
+
+    .login-box h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .login-box p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .passcode-input {
+        padding: 0.6rem;
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 0.8rem;
+        border-radius: 6px;
+    }
+
+    .login-btn {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+        border-radius: 6px;
+    }
+
+    .login-message {
+        font-size: 0.85rem;
+    }
+
+    .private-moments h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .private-gallery {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .private-photo {
+        border-radius: 8px;
+    }
+
+    .private-photo img {
+        height: 180px;
+    }
+
+    .private-photo p {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .private-messages {
+        padding: 1rem;
+        margin-bottom: 1.2rem;
+        border-radius: 8px;
+    }
+
+    .private-messages h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .messages-box {
+        padding: 1rem;
+        min-height: 80px;
+        border-left-width: 3px;
+    }
+
+    .messages-box p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .message-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        border-radius: 6px;
+    }
+
+    .logout-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        border-radius: 6px;
     }
 }
