@@ -1,6 +1,6 @@
 /* Heart Animation Section */
 .heart-container {
-    margin: 2rem 0;
+    margin: 3rem 0 2rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,15 +9,26 @@
 
 .heart-shape {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 240px;
+    height: 240px;
     cursor: pointer;
     transform-style: preserve-3d;
-    animation: heartBeatLarge 1.5s ease-in-out infinite;
+    animation: heartBeatLarge 1.8s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(255, 23, 68, 0.4));
 }
 
 .heart-shape:hover {
-    animation: heartOpen 0.8s ease-out forwards;
+    animation: heartBeatLarge 0.3s ease-out forwards;
+    filter: drop-shadow(0 0 40px rgba(255, 23, 68, 0.8));
+}
+
+.heart-hint {
+    text-align: center;
+    color: #ff1744;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    animation: fadeInOut 3s ease-in-out infinite;
+    font-weight: 500;
 }
 
 @keyframes heartBeatLarge {
@@ -25,11 +36,89 @@
         transform: scale(1);
     }
     50% {
-        transform: scale(1.1);
+        transform: scale(1.15);
     }
 }
 
-/* Heart Left Half */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .heart-shape {
+        width: 180px;
+        height: 180px;
+    }
+
+    .heart-left, .heart-right {
+        width: 90px;
+        height: 135px;
+        top: 25px;
+    }
+
+    .heart-bottom {
+        border-left: 90px solid transparent;
+        border-right: 90px solid transparent;
+        border-top: 90px solid #ff1744;
+        transform: translateX(-90px);
+    }
+
+    .love-paragraph-content {
+        max-width: 340px;
+    }
+
+    .love-box {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .love-box p {
+        font-size: 0.95rem;
+        margin: 0.8rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .heart-shape {
+        width: 150px;
+        height: 150px;
+    }
+
+    .heart-left, .heart-right {
+        width: 75px;
+        height: 112px;
+        top: 20px;
+    }
+
+    .heart-bottom {
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
+        border-top: 75px solid #ff1744;
+        transform: translateX(-75px);
+    }
+
+    .love-paragraph-content {
+        max-width: 290px;
+    }
+
+    .love-box {
+        padding: 1.2rem 1rem;
+    }
+
+    .love-box p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin: 0.6rem 0;
+    }
+
+    .heart-hint {
+        font-size: 0.85rem;
+    }
 .heart-left, .heart-right {
     position: absolute;
     width: 100px;
@@ -72,23 +161,42 @@
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     text-align: center;
     opacity: 0;
     transition: all 0.8s ease-out;
     z-index: 10;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-.love-paragraph-content p {
-    margin: 0;
+.love-box {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 245, 247, 0.98) 100%);
+    padding: 2rem 1.8rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(255, 23, 68, 0.3), 0 0 40px rgba(255, 23, 68, 0.1);
+    border: 2px solid #ffe0e6;
+    backdrop-filter: blur(10px);
+}
+
+.love-box p {
+    margin: 1rem 0;
     color: #333;
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.8;
     font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.love-box p:first-child {
+    color: #ff1744;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 0;
+}
+
+.love-box p:last-child {
+    color: #ff4081;
+    font-style: italic;
+    margin-bottom: 0;
 }
 
 /* Hover State - Heart Opens */
