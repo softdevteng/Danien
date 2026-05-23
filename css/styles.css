@@ -125,6 +125,13 @@ body {
     transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
+.hero-content.heart-opened .heart-hint {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
 .hero h1 {
     font-size: 4.5rem;
     margin-bottom: 1rem;
