@@ -70,6 +70,11 @@ document.querySelectorAll('.gallery-item, .timeline-content, .music-player').for
 document.addEventListener('DOMContentLoaded', function() {
     const heart = document.querySelector('.heart-shape');
     const heroContent = document.querySelector('.hero-content');
+    const loveClose = document.querySelector('.love-close');
+    const bgMusicToggle = document.getElementById('bgMusicToggle');
+    let bgMusic = null;
+    let bgMusicPlaying = false;
+
     if (!heart || !heroContent) return;
 
     // Hover (desktop)
@@ -94,4 +99,37 @@ document.addEventListener('DOMContentLoaded', function() {
         heart.classList.toggle('opened');
         heroContent.classList.toggle('heart-opened');
     }, {passive: true});
+
+    // Close button inside love-box
+    if (loveClose) {
+        loveClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            heart.classList.remove('opened');
+            heroContent.classList.remove('heart-opened');
+        });
+    }
+
+    // Background Music Toggle
+    if (bgMusicToggle) {
+        bgMusicToggle.addEventListener('click', () => {
+            if (!bgMusic) {
+                bgMusic = new Audio();
+                bgMusic.src = 'assets/music/CHAI YA SAA KUMI -YWAYA TAJIRI.mp3';
+                bgMusic.volume = 0.15;
+                bgMusic.loop = true;
+            }
+
+            if (!bgMusicPlaying) {
+                bgMusic.play().catch(err => console.log('Music play blocked:', err));
+                bgMusicPlaying = true;
+                bgMusicToggle.classList.add('playing');
+                bgMusicToggle.textContent = '🔊 Music Playing';
+            } else {
+                bgMusic.pause();
+                bgMusicPlaying = false;
+                bgMusicToggle.classList.remove('playing');
+                bgMusicToggle.textContent = '🔈 Background Music';
+            }
+        });
+    }
 });

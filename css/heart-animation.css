@@ -130,6 +130,35 @@
     margin-bottom: 0;
 }
 
+/* Close button inside love-box */
+.love-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #ff1744;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.love-close:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(255, 23, 68, 0.4);
+}
+
+.love-close:active {
+    transform: scale(0.95);
+}
+
 /* Hover State - Heart Opens */
 .heart-shape:hover .heart-left {
     transform: rotateZ(-50deg) translateX(-20px);
@@ -241,6 +270,7 @@
     .love-box {
         padding: 1rem 0.9rem;
         border-radius: 15px;
+        position: relative;
     }
 
     .love-box p {
@@ -256,6 +286,14 @@
 
     .love-box p:last-child {
         margin-top: 0.6rem;
+    }
+
+    .love-close {
+        width: 28px;
+        height: 28px;
+        font-size: 1.1rem;
+        top: 0.8rem;
+        right: 0.8rem;
     }
 
     .heart-hint {
