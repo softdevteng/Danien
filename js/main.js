@@ -66,14 +66,11 @@ document.querySelectorAll('.gallery-item, .timeline-content, .music-player').for
     observer.observe(el);
 });
 
-// Message slide-up animation and background music control
+// Message slide-up animation
 document.addEventListener('DOMContentLoaded', function() {
     const revealBtn = document.getElementById('revealMessage');
     const messageContainer = document.querySelector('.message-slide-container');
     const closeBtn = document.querySelector('.message-close');
-    const bgMusicToggle = document.getElementById('bgMusicToggle');
-    let bgMusic = null;
-    let bgMusicPlaying = false;
 
     // Reveal message slide-up animation
     if (revealBtn && messageContainer) {
@@ -105,30 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     messageContainer.classList.remove('open');
                     messageContainer.classList.remove('closing');
                 }, 400);
-            }
-        });
-    }
-
-    // Background Music Toggle
-    if (bgMusicToggle) {
-        bgMusicToggle.addEventListener('click', () => {
-            if (!bgMusic) {
-                bgMusic = new Audio();
-                bgMusic.src = 'assets/music/CHAI YA SAA KUMI -YWAYA TAJIRI.mp3';
-                bgMusic.volume = 0.15;
-                bgMusic.loop = true;
-            }
-
-            if (!bgMusicPlaying) {
-                bgMusic.play().catch(err => console.log('Music play blocked:', err));
-                bgMusicPlaying = true;
-                bgMusicToggle.classList.add('playing');
-                bgMusicToggle.textContent = '🔊 Music Playing';
-            } else {
-                bgMusic.pause();
-                bgMusicPlaying = false;
-                bgMusicToggle.classList.remove('playing');
-                bgMusicToggle.textContent = '🔈 Background Music';
             }
         });
     }
