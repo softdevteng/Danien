@@ -66,46 +66,46 @@ document.querySelectorAll('.gallery-item, .timeline-content, .music-player').for
     observer.observe(el);
 });
 
-// Heart interaction: hide other hero text when heart opens (hover or tap)
+// Message slide-up animation and background music control
 document.addEventListener('DOMContentLoaded', function() {
-    const heart = document.querySelector('.heart-shape');
-    const heroContent = document.querySelector('.hero-content');
-    const loveClose = document.querySelector('.love-close');
+    const revealBtn = document.getElementById('revealMessage');
+    const messageContainer = document.querySelector('.message-slide-container');
+    const closeBtn = document.querySelector('.message-close');
     const bgMusicToggle = document.getElementById('bgMusicToggle');
     let bgMusic = null;
     let bgMusicPlaying = false;
 
-    if (!heart || !heroContent) return;
+    // Reveal message slide-up animation
+    if (revealBtn && messageContainer) {
+        revealBtn.addEventListener('click', () => {
+            messageContainer.classList.add('open');
+        });
+    }
 
-    // Hover (desktop)
-    heart.addEventListener('mouseenter', () => {
-        heart.classList.add('opened');
-        heroContent.classList.add('heart-opened');
-    });
-    heart.addEventListener('mouseleave', () => {
-        heart.classList.remove('opened');
-        heroContent.classList.remove('heart-opened');
-    });
-
-    // Click / touch (mobile) toggles open state
-    heart.addEventListener('click', (e) => {
-        e.preventDefault();
-        heart.classList.toggle('opened');
-        heroContent.classList.toggle('heart-opened');
-    });
-
-    // Touch support: toggle on touchstart as well
-    heart.addEventListener('touchstart', (e) => {
-        heart.classList.toggle('opened');
-        heroContent.classList.toggle('heart-opened');
-    }, {passive: true});
-
-    // Close button inside love-box
-    if (loveClose) {
-        loveClose.addEventListener('click', (e) => {
+    // Close message slide-up
+    if (closeBtn && messageContainer) {
+        closeBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            heart.classList.remove('opened');
-            heroContent.classList.remove('heart-opened');
+            messageContainer.classList.add('closing');
+            
+            setTimeout(() => {
+                messageContainer.classList.remove('open');
+                messageContainer.classList.remove('closing');
+            }, 400);
+        });
+    }
+
+    // Close when clicking outside
+    if (messageContainer) {
+        messageContainer.addEventListener('click', (e) => {
+            if (e.target === messageContainer) {
+                messageContainer.classList.add('closing');
+                
+                setTimeout(() => {
+                    messageContainer.classList.remove('open');
+                    messageContainer.classList.remove('closing');
+                }, 400);
+            }
         });
     }
 

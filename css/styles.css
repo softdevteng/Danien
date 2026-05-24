@@ -112,24 +112,10 @@ body {
     position: relative;
     z-index: 2;
     animation: fadeInScale 1.2s ease-out;
-}
-
-/* When heart is opened, hide other hero text so love message is readable */
-.hero-content.heart-opened .romantic-message,
-.hero-content.heart-opened .love-paragraph,
-.hero-content.heart-opened .hearts-animation,
-.hero-content.heart-opened .subtitle {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.98);
-    pointer-events: none;
-    transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-.hero-content.heart-opened .heart-hint {
-    opacity: 0;
-    transform: translateY(-6px) scale(0.98);
-    pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .hero h1 {

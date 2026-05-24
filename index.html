@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/timeline.css">
     <link rel="stylesheet" href="css/music.css">
     <link rel="stylesheet" href="css/private.css">
-    <link rel="stylesheet" href="css/heart-animation.css">
+    <link rel="stylesheet" href="css/message-animation.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -36,24 +36,17 @@
             <p class="subtitle">Forever My Greatest Love ❤️</p>
             <button id="bgMusicToggle" class="bg-music-toggle" aria-pressed="false">🔈 Background Music</button>
             <p class="romantic-message">💕 You are my greatest love, my deepest passion, and my forever soul 💕</p>
+            <button id="revealMessage" class="reveal-message-btn">💌 Read My Heart</button>
             
-            <!-- Heart Animation -->
-            <div class="heart-container">
-                <div class="heart-shape">
-                    <div class="heart-left"></div>
-                    <div class="heart-right"></div>
-                    <div class="heart-bottom"></div>
-                    <div class="love-paragraph-content">
-                        <div class="love-box">
-                            <button class="love-close" aria-label="Close">✕</button>
-                            <p>My dearest Wanjiku,</p>
-                            <p>Every moment with you is a blessing. You are my greatest love, my soulmate, and my forever. Your love has transformed my life completely. I am madly, deeply, and eternally in love with you. You are my inspiration, my joy, and my reason to smile every single day. I promise to love you, cherish you, and make you happy for all our lives together. You are my everything. 💕</p>
-                            <p>Forever yours, Mwangi</p>
-                        </div>
-                    </div>
+            <!-- Message Slide-Up Animation -->
+            <div class="message-slide-container">
+                <div class="message-slide-box">
+                    <button class="message-close" aria-label="Close">✕</button>
+                    <p>My dearest Wanjiku,</p>
+                    <p>Every moment with you is a blessing. You are my greatest love, my soulmate, and my forever. Your love has transformed my life completely. I am madly, deeply, and eternally in love with you. You are my inspiration, my joy, and my reason to smile every single day. I promise to love you, cherish you, and make you happy for all our lives together. You are my everything. 💕</p>
+                    <p>Forever yours, Mwangi</p>
                 </div>
             </div>
-            <p class="heart-hint">❤️ Hover over the heart to reveal a message ❤️</p>
             
             <div class="hearts-animation">
                 <span class="heart">💕</span>
@@ -130,6 +123,7 @@
 
                 <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
                 <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                <button class="fullscreen-btn" id="fullscreenBtn" aria-label="Fullscreen">⛶</button>
             </div>
             <div class="dot-container">
                 <span class="dot" onclick="currentSlide(1)"></span>
@@ -142,6 +136,20 @@
                 <span class="dot" onclick="currentSlide(8)"></span>
             </div>
         </div>
+        
+        <!-- Fullscreen Slideshow Modal -->
+        <div id="fullscreenModal" class="fullscreen-modal">
+            <div class="fullscreen-slideshow-container">
+                <button class="fullscreen-close-btn" onclick="closeFullscreen()">✕</button>
+                <div class="fullscreen-slide-wrapper">
+                    <img id="fullscreenSlideImg" src="" alt="Fullscreen Slide">
+                </div>
+                <a class="fullscreen-prev" onclick="fullscreenChangeSlide(-1)">&#10094;</a>
+                <a class="fullscreen-next" onclick="fullscreenChangeSlide(1)">&#10095;</a>
+                <div class="fullscreen-dot-container" id="fullscreenDots"></div>
+            </div>
+        </div>
+        
         <!-- Video Section -->
         <div class="video-section">
             <h3>Our Special Moment 🎬</h3>
